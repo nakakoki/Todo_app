@@ -1,0 +1,58 @@
+.head {
+  background-color: aqua;
+  width: 100vw;
+  height: 100px;
+  padding: 20px 100px 0 40px;
+}
+
+.head-wrapper{
+  display: flex;
+  justify-content: space-between;
+}
+
+.head-left {
+  height: 80px;
+  background-color: cornsilk;
+}
+
+.head-right-top {
+  height: 80px;
+}
+
+.head-top-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none; 
+  height: 40px;
+}
+
+.head-bottom-list {
+  display: flex;
+  list-style: none;
+}
+
+.top-list {
+  padding: 0 10px 0 20px;
+  margin: 0 10px 5px 0;
+}
+
+.bottom-list {
+  padding: 0 10px 0 20px;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.side {
+  background-color: aquamarine;
+  width: 200px;
+  height: 100vh;
+  padding: 20px;
+}
+
+.main {
+  width: calc(100vw - 200px);
+  padding: 20px 40px 20px 20px;
+}
