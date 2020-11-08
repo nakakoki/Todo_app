@@ -4,12 +4,13 @@
   </div>
   <div class="head-right-top">
     <ul class="head-top-list">
-      <div class="top-list">
-        <li><%= link_to 'ユーザー名' %>
-      </div>
-      <div class="top-list">
-        <li><%= link_to 'ログアウト' %>
-      </div>
+      <% if user_signed_in? %>
+          <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <% else %>
+          <li><%= link_to '新規登録', new_user_registration_path, class: "new-registration"%></li>
+          <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+      <% end %>
     </ul>
     <ul class="head-bottom-list">
       <div class="bottom-list">

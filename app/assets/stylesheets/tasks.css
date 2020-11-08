@@ -21,20 +21,33 @@
 
 .head-top-list {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   list-style: none; 
   height: 40px;
 }
 
+.user-nickname {
+  color: #333333;
+}
+
+.logout {
+  color: #333333;
+}
+
+.new-registration {
+  color: #333333;
+  background-color: aliceblue;
+  margin: 10px;
+}
+
+.login {
+  color: #333333;
+}
+
 .head-bottom-list {
   display: flex;
   list-style: none;
-}
-
-.top-list {
-  padding: 0 10px 0 20px;
-  margin: 0 10px 5px 0;
 }
 
 .bottom-list {
