@@ -20,7 +20,7 @@
         <li><%= link_to 'Chat', rooms_path%></li>
       </div>
       <div class="bottom-list">
-        <li><%= link_to 'Account' %></li>
+        <li><%= link_to 'Account', user_path(current_user.id) %></li>
       </div>
       <div class="bottom-list">
         <li><%= link_to 'To do', root_path %></li>
