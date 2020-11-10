@@ -7,6 +7,9 @@ class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :position
   belongs_to_active_hash :team
+  has_many :room_users
+  has_many :rooms, through: :room_users
+  has_many :messages
 
   with_options presence: true do
     validates :nickname
