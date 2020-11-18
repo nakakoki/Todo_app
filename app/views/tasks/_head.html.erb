@@ -1,0 +1,33 @@
+<div class="head-wrapper">
+  <div class="head-left">
+    <h1><%=link_to 'Todo LIST', root_path%></h1>
+  </div>
+  <div class="head-right-top">
+    <ul class="head-top-list">
+      <% if user_signed_in? %>
+          <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <% else %>
+          <li><%= link_to '新規登録', new_user_registration_path, class: "new-registration"%></li>
+          <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+      <% end %>
+    </ul>
+    <ul class="head-bottom-list">
+      <div class="bottom-list">
+        <li><%= link_to 'Calendar'%></li>
+      </div>
+      <div class="bottom-list">
+        <li><%= link_to 'Chat', rooms_path%></li>
+      </div>
+      <div class="bottom-list">
+        <li><%= link_to 'Account', user_path(current_user.id) %></li>
+      </div>
+      <div class="bottom-list">
+        <li><%= link_to 'To do', root_path %></li>
+      </div>
+      <div class="bottom-list">
+        <li><%= link_to 'Member'%></li>
+      </div>
+    </ul>
+  </div>
+</div>

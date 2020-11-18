@@ -1,0 +1,33 @@
+<div class= "head">
+  <%= render "tasks/head"%>
+</div>
+<div class="task-form">
+  <h1>新規タスク作成</h1>
+  <%= form_with model: @task, url: tasks_path, method: :post, local: true do |f| %>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">title</label>
+      </div>
+      <%= f.text_field :title, class:"input-default", id:"name", placeholder:"title" %>
+    </div>
+    <div class="form-group">
+      <div class="form-text-wrap">
+        <label class="form-text">description</label>
+      </div>
+      <%= f.text_area :description, class: "input-default", id:"name", placeholder:"説明"%>
+    </div>
+    <div class="form-group">
+      <div class="form-text-wrap">
+        <label class="form-text">目標完了日</label>
+      </div>
+      <%= f.date_field :completion_date%>
+    </div>
+    <div class="form-group">
+      <div class="form-text-wrap">
+        <label class="form-text">締切</label>
+      </div>
+      <%= f.date_field :deadline%>
+    </div>
+    <%= f.submit "作成"%>
+  <% end %>
+</div>

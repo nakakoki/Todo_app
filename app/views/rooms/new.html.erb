@@ -1,0 +1,28 @@
+<div class= "head">
+  <%= render "tasks/head"%>
+</div>
+<div class="chat-room-form">
+  <h1>新規チャットルーム</h1>
+  <%=form_with model: @room, url: rooms_path, method: :post, local: true do |f|%>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">ルーム名</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :name, class:"input-default", id:"name", placeholder:"ルーム名" %>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">メンバー</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <select>
+        <option value="">チャットするユーザーを選択してください</option>
+        <% User.where.not(id: current_user.id).each do |user| %>
+          <option><%= user.nickname %></option>
+        <% end %>
+      </select>
+    </div>
+    <%= f.submit 'new create'%>
+  <% end %>
+</div>

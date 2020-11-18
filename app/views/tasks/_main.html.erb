@@ -1,0 +1,12 @@
+<div class= "main-form">
+  <h1>タスク詳細</h1>
+  <div class="form-task-list">
+    <% @tasks.each do |task| %>
+      <ul class="side-list">
+        <div class="list">
+          <li><%= link_to task.title%></li>
+        </div>
+      </ul>
+    <% end %>
+  </div>
+</div>
